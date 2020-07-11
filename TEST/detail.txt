@@ -1,0 +1,11 @@
+{
+	"data_format":["name","start_date","end_date"],
+					"movies" : [["Bala","8 Jan","28 Jan"],
+					["Rock","20 Jan","30 Jan"],
+					["PolicyMaker","29 Jan", "16 Feb"],
+					["Brave","02 Feb","14 Feb"],
+					["Drive","10 Feb","18 Feb"],
+					["Race","15 Feb","28 Feb"]
+					]
+
+}
