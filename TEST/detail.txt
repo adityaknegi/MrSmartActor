@@ -1,11 +1,68 @@
-{
-	"data_format":["name","start_date","end_date"],
+
+url - http://127.0.0.1:8000/api/smartassistant/get_movie_list
+
+
+test_1 ={"data_format":["name","start_date","end_date"],
 					"movies" : [["Bala","8 Jan","28 Jan"],
 					["Rock","20 Jan","30 Jan"],
 					["PolicyMaker","29 Jan", "16 Feb"],
 					["Brave","02 Feb","14 Feb"],
 					["Drive","10 Feb","18 Feb"],
 					["Race","15 Feb","28 Feb"]
-					]
+					]}
+Output : WE HAVE MULTIPLE SET MOVIE WITH  MAX SET SIZE IS 2
+EXAMPLE
+["Bala","8 Jan","28 Jan"]
+["PolicyMaker","29 Jan", "16 Feb"]
 
-}
+
+test_2 ={"data_format":["name","start_date","end_date"],
+					"movies" : [
+						["Bala","8 Jan","28 Jan"],
+						["Bala_s","8 Jan","28 Jan"],
+
+					["Bala_1","8 Jan","18 Jan"],
+					["Bala_2","8 Jan","10 Jan"],
+
+					["Rock","20 Jan","30 Jan"],
+						["Race_2","15 Feb","25 Feb"],
+					["PolicyMaker","29 Jan", "16 Feb"],
+					["Brave","02 Feb","14 Feb"],
+					["Drive","10 Feb","18 Feb"],
+					["Race","15 Feb","28 Feb"],
+
+					["aRace_3","15 Feb","16 Feb"],
+					["bRace_2","15 Feb","25 Mar"],
+					["cPolicyMaker","29 Jan", "16 Dec"],
+					["dBrave","02 Feb","14 Feb"],
+					["eDrive","10 Feb","18 Feb"],
+					["fRace","15 Feb","28 Feb"],
+					["gRace_3","15 Dec","16 Dec"],
+					["jRace_3","15 Dec","17 Dec"],
+
+					["dBrave","2 Jun","14 Jul"],
+					["dBrave","11 Jun","14 Jul"],
+					["dBrave","3 Jun","24 Jul"],
+					["dBrave","11 Jun","11 Jul"],
+					["dBrave","3 Jun","4 Jul"],
+					["dBrave","11 Jun","111 Jul"],
+					["dBrave","3 Jun","3 Jul"],
+					["dBrave","13 Jun","28 Jun"],
+					["dBrave","11 Jun","11 Jul"],
+					["dBrave","3 Jun","3 Jul"],
+					["dBrave","31 Aug","28 Nov"],
+					["dBrave","11 Nov","11 Nov"],
+					["dBrave","3 Nov","3 Nov"],
+					["dBrave","13 Jun","28 Jul"],
+					["dBrave","13 Apr","28 Jul"],
+
+					["eDrive","1 Feb","18 Feb"],
+					["fRace","15 Feb","28 Feb"],
+					["gRace_3","15 Dec","16 Dec"],
+					["jRace_3","15 Dec","17 Dec"]
+
+					]}
+Output : WE HAVE MULTIPLE SET MOVIE WITH  MAX SET SIZE IS 7
+
+
+
