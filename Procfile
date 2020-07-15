@@ -1,1 +1,1 @@
-web: gunicorn Trackerapp.wsgi
+web: gunicorn assistant-aditya.wsgi
