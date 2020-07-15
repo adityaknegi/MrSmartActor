@@ -9,11 +9,34 @@ from rest_framework.utils import json
 
 
 @api_view(['POST'])
-def get_movie_list(request):
-    final_list = {'ok': True, "data": []}
+def get_one_movies_list(request):
+    final_list = {"total_money": str(0)+' crore', "data": []}
+
     if request.method == 'POST':
         data = request.data
         ml = MovieList(data['movies'], data['data_format'])
         final_list['data'] = ml.final_list
+        final_list['total_money'] = str(len(ml.final_list)) + ' crore'
 
-    return JsonResponse(final_list, status=status.HTTP_200_OK,safe=False)
+        return JsonResponse(final_list, status=status.HTTP_200_OK, safe=False)
+    return JsonResponse(final_list, status=status.HTTP_400_BAD_REQUEST, safe=False)
+
+
+@api_view(['POST'])
+def get_movies_set(request):
+    final_list = {"total_money": str(0)+' crore', "options": 0,"data": []}
+
+    if request.method == 'POST':
+        data = request.data
+        ml = MovieList(data['movies'], data['data_format'])
+        max_len = len(ml.final_list)
+
+
+        ml = MoviesListSET(data['movies'], data['data_format'], max_len)
+        ml.movies_list()
+        final_list['data'] = ml.final_movies_list
+        final_list['total_money'] = str(len(ml.final_movies_list[0])) + ' crore'
+        final_list['options'] = len(ml.final_movies_list)
+
+        return JsonResponse(final_list, status=status.HTTP_200_OK, safe=False)
+    return JsonResponse(final_list, status=status.HTTP_400_BAD_REQUEST, safe=False)
