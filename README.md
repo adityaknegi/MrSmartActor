@@ -16,7 +16,9 @@
 *body*: json object with start time and end time
 
 3. Get all maximum number movies of set \
-*url*: https://assistant-aditya.herokuapp.com/api/smartassistant/get_movies_set
+
+*url*: https://assistant-aditya.herokuapp.com/api/smartassistant/get_movies_set  
+
 *method*: POST
 
 **P.S. More details about the calling of the APIs are present in Test/details.txt**
