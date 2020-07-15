@@ -1,1 +1,1 @@
-web: gunicorn assistant-aditya.wsgi
+web: gunicorn MrSmartActor.wsgi
