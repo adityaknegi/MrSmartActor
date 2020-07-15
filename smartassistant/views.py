@@ -13,7 +13,7 @@ def get_one_movies_list(request):
     final_list = {"total_money": str(0)+' crore', "data": []}
 
     if request.method == 'POST':
-        data = dict(request.data)
+        data = request.data
         ml = MovieList(data['movies'], data['data_format'])
         final_list['data'] = ml.final_list
         final_list['total_money'] = str(len(ml.final_list)) + ' crore'
@@ -28,12 +28,11 @@ def get_movies_set(request):
 
     if request.method == 'POST':
         data = request.data
-        movies = request.POST.get('movie', None)
-        data_format = request.POST.get('data_format', None)
-        ml = MovieList(movies, data_format)
+        ml = MovieList(data['movies'], data['data_format'])
         max_len = len(ml.final_list)
 
-        ml = MoviesListSET(movies, data_format, max_len)
+
+        ml = MoviesListSET(data['movies'], data['data_format'], max_len)
         ml.movies_list()
         final_list['data'] = ml.final_movies_list
         final_list['total_money'] = str(len(ml.final_movies_list[0])) + ' crore'
